@@ -134,7 +134,7 @@ varying vec4 vcolor;//Semana3
         triangleVertexPositionBuffer = gl.createBuffer();
         gl.bindBuffer(gl.ARRAY_BUFFER, triangleVertexPositionBuffer);
         var vertices = [
-             0.0,  1.0,  0.0,
+             0.0,  1.5,  0.0,
             -1.0, -1.0,  0.0,
              1.0, -1.0,  0.0
         ];
@@ -172,11 +172,11 @@ varying vec4 vcolor;//Semana3
         gl.viewport(0, 0, gl.viewportWidth, gl.viewportHeight);
         gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
-        mat4.perspective(45, gl.viewportWidth / gl.viewportHeight, 0.1, 100.0, pMatrix);
+        mat4.perspective(40, gl.viewportWidth / gl.viewportHeight, 0.1, 100.0, pMatrix);
 
         mat4.identity(mvMatrix);
 
-        mat4.translate(mvMatrix, [-1.5, 0.0, -7.0]);
+        mat4.translate(mvMatrix, [-3, 0.0, -14]);
         gl.bindBuffer(gl.ARRAY_BUFFER, triangleVertexPositionBuffer);
         gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, triangleVertexPositionBuffer.itemSize, gl.FLOAT, false, 0, 0);
        gl.bindBuffer(gl.ARRAY_BUFFER, triangleVertexColorBuffer);//Semana3
@@ -201,7 +201,7 @@ varying vec4 vcolor;//Semana3
         initShaders();
         initBuffers();
 
-        gl.clearColor(0.0, 0.0, 0.0, 1.0);
+        gl.clearColor(0.6, 0.0, 0.8, 1.0);
         gl.enable(gl.DEPTH_TEST);
 
         drawScene();
@@ -216,7 +216,7 @@ varying vec4 vcolor;//Semana3
 
 <body onload="webGLStart();">
 
-    <canvas id="leccion1-canvas" style="border: none;" width="500" height="500"></canvas>
+    <canvas id="leccion1-canvas" style="border: none;" width="800" height="500"></canvas>
 
 </body>
 
